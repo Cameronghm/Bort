@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 
-{% block head %}
+{% block title %}
 <title>Information</title>
 {% endblock %}
 
-{% block body %}
+{% block head %}
     <h1>You need to give us some information so we can calculate your retirement information!</h1>
+{% endblock %}
+
+{% block body %}
 
     <form action="/datainput" method="POST">
-        <input type="number" name="Yearly Savings" id="savings">
-        <input type="number" name="Retirement length" id="retirementlength"
+        <input type="number" name="Yearly Savings" id="savingsperyear">
+        <input type="number" name="Retirement length" id="retirementlength">
         <input type="number" name="Time until retirement" id="savinglength">
+        <input type="number" name="Expected growth of income per year until retirement" id="incomegrowth">
+        <input type="number" name="Expected income in retirement" id="retirementincome">
+        <input type="number" name="Current savings" id="currentsavings">
+        <input type="radio" name="Are you eligible for the state pension?" id="statepension">
+        <input type="radio" name="Are you male or female?" id="gender">
     </form>
+
 {% endblock %}
