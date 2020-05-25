@@ -11,14 +11,36 @@
 {% block body %}
 
     <form action="/datainput" method="POST">
-        <input type="number" name="Yearly Savings" id="savingsperyear">
-        <input type="number" name="Retirement length" id="retirementlength">
-        <input type="number" name="Time until retirement" id="savinglength">
-        <input type="number" name="Expected growth of income per year until retirement" id="incomegrowth">
-        <input type="number" name="Expected income in retirement" id="retirementincome">
-        <input type="number" name="Current savings" id="currentsavings">
-        <input type="radio" name="Are you eligible for the state pension?" id="statepension">
-        <input type="radio" name="Are you male or female?" id="gender">
+        Yearly Savings: <input type="number" name="savingsperyear" id="savingsperyear">
+        <br>
+        Retirement length: <input type="number" name="retirementlength" id="retirementlength">
+        <br>
+        Time until retirement: <input type="number" name="savinglength" id="savinglength">
+        <br>
+        Expected growth of income per year until retirement: <input type="number" name="incomegrowth" id="incomegrowth">
+        <br>
+        Expected expenditure in retirement: <input type="number" name="retirementcosts" id="retirementcosts">
+        <br>
+        Investment Growth: <input type="number" name="investmentgrowth" id="investmentgrowth">
+        <br>
+        Current Savings: <input type="number" name="currentsavings" id="currentsavings">
+        <br>
+        Eligible for state pension?
+        <br>
+        <input type="radio" name="statepension" value="yes" id="yes" checked="checked">
+        <label for="yes">Yes</label>
+        <input type="radio" name="statepension" value="no" id="no">
+        <label for="no">No</label>
+        
+        <br>
+        Gender
+        <br>
+        <input type="radio" value="male" name="gender" id="male" checked="checked">
+        <label for="male">Male</label>
+        <input type="radio" value="female" name="gender" id="female">
+        <label for="female">Female</label>
+        <br>
+        <input type="submit" value="Submit" id="submit"> 
     </form>
 
 {% endblock %}
