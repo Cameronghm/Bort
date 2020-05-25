@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Data Entry Page</title>
     <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <div id="container">
       <header id="header">
         <h1 id="title">Banking Optimization Retirement Tracker</h1>
-        <p id="description"><em>This form will help you calculate when you can retire.</em></p>
+        <p id="description"><em>This form will help you calculate when you can retire. If you need more information refer to the <a href="faq.html">FAQ page</a>.</em></p>
       </header>
       <form id="form" action="" method="post">
         <label title="The amount you earn post-tax annually, in &#163;s" for="income" class="label">Income &#128712;</label>
         <br />
         <input type="number" id="income" name="income" min="0">
         <br />
-        <label title="The amount you save or invest annually, in &#163;s" for="savings" class="label">Savings &#128712;</label>
+        <label title="The amount you currently have saved or invested, in &#163;s" for="currentsavings" class="label">Current Savings &#128712;</label>
         <br />
-        <input type="number" id="savings" name="savings" min="0">
+        <input type="number" id="currentsavings" name="currentsavings" min="0">
+        <br />
+        <label title="The amount you save or invest annually, in &#163;s" for="yearlysavings" class="label">Yearly Savings &#128712;</label>
+        <br />
+        <input type="number" id="yearlysavings" name="yearlysavings" min="0">
         <br />
         <label for="age" class="label">Age</label>
         <br />
@@ -44,20 +49,27 @@
         <br />
         <label for="gender" class="label">Gender</label>
         <br />
-        Male <input type="radio" name="gender" value="m" id="gender">
-        Female<input type="radio" name="gender" value="f" id="gender">
+        <select id="gender" name="gender">
+          <option></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
         <br />
-        <label for="statepensioneligibility" id="label">Are you eligible for the State Pension?</label>
+        <label title="Go to FAQ for more info" for="statepensioneligibility" class="label">Are you eligible for the State Pension? &#128712;</label>
         <br />
-        <input type="radio" name="statepensioneligibility" value="y" id="eligible">
-        <label for="eligible">Yes</label>
-        <br>
-        <input type="radio" name="statepensioneligibility" value="n" id="noteligible">
-        <label for="noteligible">No</label>
-        <br>
-        <label for="yearsuntilretirement" id="label">Years until retirement</label>
+        <select id="statepensioneligibility" name="statepensioneligibility">
+          <option></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <br />
-        <input type="number" id="yearsuntilretirement" name="yearsuntilretirement" min="0" max="100">
+        <label title="Your ideal retirement age" for="retirementage" class="label">Retirement Age &#128712;</label>
+        <br />
+        <input type="number" id="retirementage" name="retirementage" min="0" max="100">
+        <br />
+        <label title="How long you expect you need your money to last" for="retirementlength" class="label">Retirement Length &#128712;</label>
+        <br />
+        <input type="number" id="retirementlength" name="retirementlength" min="0" max="100">
         <br />
         <button type="submit" name="submit" value="calculate" id="button">Calculate</button>
         </div>

@@ -40,7 +40,7 @@ body {
 #form {
   width: 60%;
   margin: 1em auto 0 auto;
-  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 1), rgba(255, 121, 111, 1));
+  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 0.6), rgba(255, 121, 111, 0.6));
   padding: 1em 1em;
   border-radius: 0.25em;
 }
@@ -60,14 +60,38 @@ body {
   margin: 0.25em 0.5em 0.25em 0.5em ;
 }
 
+#form select {
+  height: 2em;
+  border-width: 0.2em;
+  border-color: rgba(255, 164, 111, 0);
+  border-radius: 0.25em;
+  width: 50%;
+  margin: 0.25em 0.5em 0.25em 0.5em ;
+}
+
 #button {
   width: 90%;
   margin: 0.6em;
   height: 2.5em;
-  background-color: rgba(255, 164, 111, 1);
+  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 0.6), rgba(255, 121, 111, 0.6));
   border: 0;
   font-family: inherit;
   font-size: 1.2em;
+}
+
+#faq h2{
+  text-align: center;
+  text-decoration: underline;
+}
+
+#faq h3 {
+  text-align: left;
+  margin: 0.3em;
+}
+
+#faq p {
+  text-align: left;
+  margin: 0.3em;
 }
 
 @media (min-width: 600px) {
