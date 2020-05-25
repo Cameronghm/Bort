@@ -2,7 +2,8 @@
 
 :root {
   --headingfontsize: 2.25em;
-  --fontsize: 1.25em;
+  --descfontsize: 1.25em;
+  --fontsize: 1.05em;
 }
 
 html {
@@ -33,29 +34,40 @@ body {
 
 #description {
   text-align: center;
-  font-size: var(--fontsize);
+  font-size: var(--descfontsize);
 }
 
 #form {
-  height: 80%;
   width: 60%;
   margin: 1em auto 0 auto;
   background-image: linear-gradient(to bottom, rgba(255, 164, 111, 1), rgba(255, 121, 111, 1));
-  padding: 1em 0.625em;
+  padding: 1em 1em;
   border-radius: 0.25em;
-  align-items: center;
 }
 
 #label {
   text-align: left;
-  padding: 0.5em;
+  padding: 0.4em;
+  font-size: var(--fontsize);
 }
 
-#name {
+#form input {
   height: 2em;
   border-width: 0.2em;
   border-color: rgba(255, 164, 111, 0);
   border-radius: 0.25em;
   width: 90%;
   margin: 0.25em 0.5em 0.25em 0.5em ;
+}
+
+@media (min-width: 600px) {
+  #form {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1000px) {
+  #form {
+    width: 30%;
+  }
 }

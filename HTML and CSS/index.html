@@ -10,9 +10,44 @@
         <p id="description"><em>This form will help you calculate when you can retire.</em></p>
       </header>
       <form id="form" action="" method="post">
-        <label for="name" id="label">Name</label>
+        <label for="income" id="label">Income &#128712;</label>
         <br />
-        <input type="text" id="name" name="name">
+        <input type="number" id="income" name="income" min="0">
+        <br />
+        <label for="savings" id="label">Savings</label>
+        <br />
+        <input type="number" id="savings" name="savings" min="0">
+        <br />
+        <label for="age" id="label">Age</label>
+        <br />
+        <input type="number" id="age" name="age" min="0">
+        <br />
+        <label for="safewithdrawalrate" id="label">Safe Withdrawal Rate (%)</label>
+        <br />
+        <input type="number" id="safewithdrawalrate" name="safewithdrawalrate" min="0" max="100">
+        <br />
+        <label for="lifeexpectancy" id="label">Life Expectancy</label>
+        <br />
+        <input type="number" id="lifeexpectancy" name="lifeexpectancy" min="0">
+        <br />
+        <label for="incomegrowth" id="label">Income Growth (%)</label>
+        <br />
+        <input type="number" id="incomegrowth" name="incomegrowth" min="0" max="100">
+        <br />
+        <label for="investmentgrowth" id="label">Investment Growth (%)</label>
+        <br />
+        <input type="number" id="investmentgrowth" name="investmentgrowth" min="0" max="100">
+        <br />
+        <label for="expectedincomeinretirement" id="label">Expected Income in Retirement</label>
+        <br />
+        <input type="number" id="expectedincomeinretirement" name="expectedincomeinretirement" min="0">
+        <br />
+        <label for="Gender" id="label">Gender</label>
+        <br />
+        <input type="radio" name="gender" value="m" id="gender"> Male
+        <input type="radio" name="gender" value="f" id="gender"> Female
+        <br />
+        </div>
       </form>
     </div>
   </body>
