@@ -38,7 +38,7 @@ def datainput():
             male = True
         else:
             male = False
-        data(savingsperyear, retirementlength, savinglength, incomegrowth, retirementcosts, investmentgrowth,
+        userinput = data(savingsperyear, retirementlength, savinglength, incomegrowth, retirementcosts, investmentgrowth,
              currentsavings, statepension, male)
         return render_template("datainput.html")
 
