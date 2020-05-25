@@ -9,14 +9,14 @@
         <h1 id="title">Banking Optimization Retirement Tracker</h1>
         <p id="description"><em>This form will help you calculate when you can retire.</em></p>
       </header>
-      <form id="form" action="" method="post">
+      <form id="form" action="/datainput" method="POST">
         <label for="income" id="label">Income &#128712;</label>
         <br />
         <input type="number" id="income" name="income" min="0">
         <br />
-        <label for="savings" id="label">Savings</label>
+        <label for="savings" id="label">Savings/year</label>
         <br />
-        <input type="number" id="savings" name="savings" min="0">
+        <input type="number" id="savingsperyear" name="savingsperyear" min="0">
         <br />
         <label for="age" id="label">Age</label>
         <br />
@@ -26,9 +26,9 @@
         <br />
         <input type="number" id="safewithdrawalrate" name="safewithdrawalrate" min="0" max="100">
         <br />
-        <label for="lifeexpectancy" id="label">Life Expectancy</label>
+        <label for="lifeexpectancy" id="label">Retirement Length</label>
         <br />
-        <input type="number" id="lifeexpectancy" name="lifeexpectancy" min="0">
+        <input type="number" id="retirementlength" name="retirementlength" min="0">
         <br />
         <label for="incomegrowth" id="label">Income Growth (%)</label>
         <br />
@@ -44,8 +44,8 @@
         <br />
         <label for="Gender" id="label">Gender</label>
         <br />
-        <input type="radio" name="gender" value="m" id="gender"> Male
-        <input type="radio" name="gender" value="f" id="gender"> Female
+        <input type="radio" name="gender" value="male" id="gender"> Male
+        <input type="radio" name="gender" value="female" id="gender"> Female
         <br />
         </div>
       </form>
