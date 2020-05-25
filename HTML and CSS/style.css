@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+:root {
+  --headingfontsize: 2.25em;
+  --fontsize: 1.25em;
+}
+
+html {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 0.5), rgba(255, 121, 111, 0.65)),
+  url('https://cdn.pixabay.com/photo/2014/07/06/13/55/calculator-385506_960_720.jpg');
+  margin: 0;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#container {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+}
+
+#title {
+  text-decoration: underline;
+  text-align: center;
+  font-size: var(--headingfontsize);
+}
+
+#description {
+  text-align: center;
+  font-size: var(--fontsize);
+}
+
+#form {
+  height: 80%;
+  width: 60%;
+  margin: 1em auto 0 auto;
+  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 1), rgba(255, 121, 111, 1));
+  padding: 1em 0.625em;
+  border-radius: 0.25em;
+  align-items: center;
+}
+
+#label {
+  text-align: left;
+  padding: 0.5em;
+}
+
+#name {
+  height: 2em;
+  border-width: 0.2em;
+  border-color: rgba(255, 164, 111, 0);
+  border-radius: 0.25em;
+  width: 90%;
+  margin: 0.25em 0.5em 0.25em 0.5em ;
+}
