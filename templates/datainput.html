@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Information</title>
+{% endblock %}
+
+{% block body %}
+    <h1>You need to give us some information so we can calculate your retirement information!</h1>
+
+    <form action="/datainput" method="POST">
+        <input type="number" name="Yearly Savings" id="savings">
+        <input type="number" name="Retirement length" id="retirementlength"
+        <input type="number" name="Time until retirement" id="savinglength">
+    </form>
+{% endblock %}
