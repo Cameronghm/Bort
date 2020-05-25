@@ -10,43 +10,56 @@
         <p id="description"><em>This form will help you calculate when you can retire.</em></p>
       </header>
       <form id="form" action="" method="post">
-        <label for="income" id="label">Income &#128712;</label>
+        <label title="The amount you earn post-tax annually, in &#163;s" for="income" class="label">Income &#128712;</label>
         <br />
         <input type="number" id="income" name="income" min="0">
         <br />
-        <label for="savings" id="label">Savings</label>
+        <label title="The amount you save or invest annually, in &#163;s" for="savings" class="label">Savings &#128712;</label>
         <br />
         <input type="number" id="savings" name="savings" min="0">
         <br />
-        <label for="age" id="label">Age</label>
+        <label for="age" class="label">Age</label>
         <br />
         <input type="number" id="age" name="age" min="0">
         <br />
-        <label for="safewithdrawalrate" id="label">Safe Withdrawal Rate (%)</label>
+        <label title="Advanced: A safe % of money to draw from your savings to live on. 4% is recommended, increasing this will lead to faster depletion of your savings" for="safewithdrawalrate" class="label">Safe Withdrawal Rate (%) &#128712;</label>
         <br />
         <input type="number" id="safewithdrawalrate" name="safewithdrawalrate" min="0" max="100">
         <br />
-        <label for="lifeexpectancy" id="label">Life Expectancy</label>
+        <label title="How long you will live for, in years" for="lifeexpectancy" class="label">Life Expectancy &#128712;</label>
         <br />
         <input type="number" id="lifeexpectancy" name="lifeexpectancy" min="0">
         <br />
-        <label for="incomegrowth" id="label">Income Growth (%)</label>
+        <label title="The expected annual increase in your annual post-tax income, in %" for="incomegrowth" class="label">Income Growth (%) &#128712;</label>
         <br />
         <input type="number" id="incomegrowth" name="incomegrowth" min="0" max="100">
         <br />
-        <label for="investmentgrowth" id="label">Investment Growth (%)</label>
+        <label title="The expected annual increase in the value of your investments, in %" for="investmentgrowth" class="label">Investment Growth (%) &#128712;</label>
         <br />
         <input type="number" id="investmentgrowth" name="investmentgrowth" min="0" max="100">
         <br />
-        <label for="expectedincomeinretirement" id="label">Expected Income in Retirement</label>
+        <label title="The amount of money you would like to live on yearly whilst in retirement" for="expectedincomeinretirement" class="label">Expected Income in Retirement &#128712;</label>
         <br />
         <input type="number" id="expectedincomeinretirement" name="expectedincomeinretirement" min="0">
         <br />
-        <label for="Gender" id="label">Gender</label>
+        <label for="gender" class="label">Gender</label>
         <br />
-        <input type="radio" name="gender" value="m" id="gender"> Male
-        <input type="radio" name="gender" value="f" id="gender"> Female
+        Male <input type="radio" name="gender" value="m" id="gender">
+        Female<input type="radio" name="gender" value="f" id="gender">
         <br />
+        <label for="statepensioneligibility" id="label">Are you eligible for the State Pension?</label>
+        <br />
+        <input type="radio" name="statepensioneligibility" value="y" id="eligible">
+        <label for="eligible">Yes</label>
+        <br>
+        <input type="radio" name="statepensioneligibility" value="n" id="noteligible">
+        <label for="noteligible">No</label>
+        <br>
+        <label for="yearsuntilretirement" id="label">Years until retirement</label>
+        <br />
+        <input type="number" id="yearsuntilretirement" name="yearsuntilretirement" min="0" max="100">
+        <br />
+        <button type="submit" name="submit" value="calculate" id="button">Calculate</button>
         </div>
       </form>
     </div>
