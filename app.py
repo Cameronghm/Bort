@@ -15,6 +15,13 @@ class data():
         self.currentsavings = currentsavings
         self.statepension = statepension
         self.male = male
+    def getFinalSavings(self):
+        spy = self.savingsperyear
+        sl = self.savinglength
+        ig = self.investmentgrowth
+        cs - self.currentsavings
+        final = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl)))
+        return final
 
 @app.route('/datainput', methods=['POST', 'GET'])
 def datainput():
