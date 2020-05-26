@@ -26,10 +26,14 @@ class data():
         cs = self.currentsavings
         swr = self.swr
         
+        #final = money in pension bot at beginning of retirment
         final = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl))
+        #deathpot = money in pension bot at end of retirment (death)
         deathpot = (final) * (((100-swr)/100)**sl) * (((100+ig)/100)**sl) 
-        initdraw = final * swr
-        finaldraw = ((final) * (((100-swr)/100)**(sl-1)) * (((100+ig)/100)**(sl-1))) * swr
+        #initdraw = first year drawdown/ first year income from pulling money from pot
+        initdraw = final * ((100-swr)/100)
+        #finaldraw = final year drawdown/ final year's income from pot
+        finaldraw = ((final) * (((100-swr)/100)**(sl-1)) * (((100+ig)/100)**(sl-1))) * ((100-swr)/100)
         
         return final
 
