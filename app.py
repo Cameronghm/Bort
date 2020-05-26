@@ -24,7 +24,13 @@ class data():
         sl = self.retirementage - self.age
         ig = self.investmentgrowth
         cs = self.currentsavings
+        swr = self.swr
+        
         final = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl))
+        deathpot = (final) * (((100-swr)/100)**sl) * (((100+ig)/100)**sl) 
+        initdraw = final * swr
+        finaldraw = ((final) * (((100-swr)/100)**(sl-1)) * (((100+ig)/100)**(sl-1))) * swr
+        
         return final
 
 @app.route('/datainput', methods=['POST', 'GET'])
