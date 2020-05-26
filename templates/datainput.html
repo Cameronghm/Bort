@@ -8,7 +8,7 @@
   <div id="container">
     <header id="header">
       <h1 id="title">Banking Optimization Retirement Tracker</h1>
-      <p id="description"><em>This form will help you calculate when you can retire. If you need more information refer to the <a href="faq.html">FAQ page</a>.</em></p>
+      <p id="description"><em>This form will help you calculate when you can retire. If you need more information refer to the <a href="{{ url_for('faq') }}" target="_blank">FAQ page</a>.</em></p>
     </header>
     <form id="form" action="/datainput" method="POST">
       <label title="The amount you earn post-tax annually, in &#163;s" for="income" class="label">Income &#128712;</label>
