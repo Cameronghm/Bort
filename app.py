@@ -42,40 +42,62 @@ class data():
 def datainput():
     if request.method == 'POST':
         f = request.form
-        income = f['income']
-        savingsperyear = f['savingsperyear']
-        retirementlength = f['retirementlength']
-        age = f['age']
-        retirementage = f['retirementage']
-        incomegrowth = f['incomegrowth']
-        retirementcosts = f['expectedincomeinretirement']
-        investmentgrowth = f['investmentgrowth']
-        currentsavings = f['currentsavings']
+        temp = {}
+        temp['income'] = f['income']
+        temp['savingsperyear'] = f['savingsperyear']
+        temp['retirementlength'] = f['retirementlength']
+        temp['age'] = f['age']
+        temp['retirementage'] = f['retirementage']
+        temp['incomegrowth'] = f['incomegrowth']
+        temp['retirementcosts'] = f['expectedincomeinretirement']
+        temp['investmentgrowth'] = f['investmentgrowth']
+        temp['currentsavings'] = f['currentsavings']
         statepension = f['statepensioneligibility']
-        swr = f['safewithdrawalrate']
+        temp['swr'] = f['safewithdrawalrate']
         male = f['gender']
-        print(statepension)
         if statepension=='yes':
-            statepension = True
+            temp['statepension'] = True
         else:
-            statepension = False
+            temp['statepension'] = False
         if male=='male':
-            male = True
+            temp['male'] = True
         else:
-            male = False
-        userinput = data(income, savingsperyear, retirementlength, age, retirementage, incomegrowth, retirementcosts, investmentgrowth,
-             currentsavings, statepension, male, swr)
-
+            temp['male'] = False
+        #userinput = data(income, savingsperyear, retirementlength, age, retirementage, incomegrowth, retirementcosts, investmentgrowth,
+        #     currentsavings, statepension, male, swr)
+        session['temporary'] = temp
         # Figure out how to get this fucking shit to fucking work
         #session['userinput'] = jsonify(json.dumps(request))
-        return render_template("datainput.html")
+        return redirect(url_for('results'))
 
     else:
         return render_template("datainput.html")
 
-@app.route('/faq', methods=['POST', 'GET'])
+@app.route('/faq', methods=['GET'])
 def faq():
     return render_template('faq.html')
+
+@app.route('/results', methods=['GET'])
+def results():
+    f = session['temporary']
+
+
+    income = f['income']
+    savingsperyear = f['savingsperyear']
+    retirementlength = f['retirementlength']
+    age = f['age']
+    retirementage = f['retirementage']
+    incomegrowth = f['incomegrowth']
+    retirementcosts = f['retirementcosts']
+    investmentgrowth = f['investmentgrowth']
+    currentsavings = f['currentsavings']
+    statepension = f['statepension']
+    swr = f['swr']
+    male = f['male']
+    userinput = data(income, savingsperyear, retirementlength, age, retirementage, incomegrowth, retirementcosts, investmentgrowth,
+                     currentsavings, statepension, male, swr)
+
+    return 'Success!'
 
 if __name__ == '__main__':
     app.run(debug=True)
