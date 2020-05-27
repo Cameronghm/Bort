@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import sqlite3 as sq
+import json
 
 app = Flask(__name__)
 app.secret_key = b'\x9d\xb7\x8ftz\x853\xbag\xc5{U-\xba\x8c)'
@@ -55,7 +56,8 @@ def datainput():
         userinput = data(income, savingsperyear, retirementlength, age, retirementage, incomegrowth, retirementcosts, investmentgrowth,
              currentsavings, statepension, male, swr)
 
-        #session['userdata'] = userinput
+        # Figure out how to get this fucking shit to fucking work
+        #session['userinput'] = jsonify(json.dumps(request))
         return render_template("datainput.html")
 
     else:
