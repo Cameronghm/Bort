@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Output</title>
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <h1 id="title">Banking Optimization Retirement Tracker Output</h1>
+        <p id="description"><em>This is the output of your data that you entered. If you need more information on what some of the results refer to, see the <a href="{{ url_for('faq') }}" target="_blank">FAQ page</a>.</em></p>
+      </header>
+      <div id="output">
+        <label for="x" class="dataoutputlabel">Retirement Age:</label>
+        <output name="x" class="dataoutput"></output>
+        <br />
+        <label for="x" class="dataoutputlabel">Retirement Pot at Start of Retirement: £"Money"</label>
+        <output name="x" class="dataoutput"></output>
+        <br />
+        <label for="x" class="dataoutputlabel">Retirement Pot at End of Retirement: £"Money"</label>
+        <output name="x" class="dataoutput"></output>
+        <br />
+        <label for="x" class="dataoutputlabel">First Year Drawdown: £"Money"</label>
+        <output name="x" class="dataoutput"></output>
+        <br />
+        <label for="x" class="dataoutputlabel">Last Year Drawdown: £"Money"</label>
+        <output name="x" class="dataoutput"></output>
+        <hr />
+        <div id="square"></div>
+      </div>
+    </div>
+  </body>
+</html>
