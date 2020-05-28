@@ -81,7 +81,6 @@ def faq():
 def results():
     f = session['temporary']
 
-
     income = f['income']
     savingsperyear = f['savingsperyear']
     retirementlength = f['retirementlength']
@@ -98,6 +97,7 @@ def results():
                      currentsavings, statepension, male, swr)
 
     finalpot, deathpot, initdraw, finaldraw = userinput.getResults()
+
 
     return 'Success!'
 
