@@ -38,6 +38,10 @@ class data():
 
         return finalpot, deathpot, initdraw, finaldraw
 
+@app.route('/', methods=['GET'])
+def getpage():
+    return redirect(url_for('datainput'))
+
 @app.route('/datainput', methods=['POST', 'GET'])
 def datainput():
     if request.method == 'POST':
