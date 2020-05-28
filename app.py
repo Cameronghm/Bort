@@ -77,6 +77,10 @@ def datainput():
 def faq():
     return render_template('faq.html')
 
+@app.route('/')
+def index():
+    return redirect(url_for('datainput'))
+
 @app.route('/results', methods=['GET'])
 def results():
     f = session['temporary']
