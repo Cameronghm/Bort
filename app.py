@@ -26,16 +26,16 @@ class data():
         ig = self.investmentgrowth
         cs = self.currentsavings
         swr = self.swr
-        
+
         #finalpot = money in pension bot at beginning of retirment
         finalpot = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl))
         #deathpot = money in pension bot at end of retirment (death)
-        deathpot = (final) * (((100-swr)/100)**sl) * (((100+ig)/100)**sl) 
+        deathpot = (final) * (((100-swr)/100)**sl) * (((100+ig)/100)**sl)
         #initdraw = first year drawdown/ first year income from pulling money from pot
         initdraw = final * ((100-swr)/100)
         #finaldraw = final year drawdown/ final year's income from pot
         finaldraw = ((final) * (((100-swr)/100)**(sl-1)) * (((100+ig)/100)**(sl-1))) * ((100-swr)/100)
-        
+
         return finalpot, deathpot, initdraw, finaldraw
 
 @app.route('/datainput', methods=['POST', 'GET'])
@@ -68,7 +68,7 @@ def datainput():
         session['temporary'] = temp
         # Figure out how to get this fucking shit to fucking work
         #session['userinput'] = jsonify(json.dumps(request))
-        return redirect(url_for('results'))
+        return redirect(url_for('dataoutput'))
 
     else:
         return render_template("datainput.html")
@@ -77,8 +77,8 @@ def datainput():
 def faq():
     return render_template('faq.html')
 
-@app.route('/results', methods=['GET'])
-def results():
+@app.route('/dataoutput', methods=['GET'])
+def dataoutput():
     f = session['temporary']
 
 
@@ -99,7 +99,7 @@ def results():
 
     finalpot, deathpot, initdraw, finaldraw = userinput.getResults()
 
-    return 'Success!'
+    render_template('dataoutput.html', retirementage=retirementage, finalpot=finalpot, deathpot=deathpot, initdraw=initdraw, finaldraw=finaldraw)
 
 if __name__ == '__main__':
     app.run(debug=True)
