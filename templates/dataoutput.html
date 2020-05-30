@@ -11,24 +11,16 @@
       <p id="description"><em>This is the output of your data that you entered. If you need more information on what some of the results refer to, see the <a href="{{ url_for('faq') }}" target="_blank">FAQ page</a>.</em></p>
     </header>
     <div id="form">
-      <div id="output">
-        <label for="x" class="dataoutputlabel">Retirement Age: {{ retirementage }}</label>
-        <output name="x" class="dataoutput"></output>
+        <label class="dataoutputlabel">Retirement Age: {{ retirementage }}</label>
         <br />
-        <label for="x" class="dataoutputlabel">Retirement Pot at Start of Retirement: £{{ finalpot }}</label>
-        <output name="x" class="dataoutput"></output>
+        <label class="dataoutputlabel">Retirement Pot at Start of Retirement: £{{ finalpot }}</label>
         <br />
-        <label for="x" class="dataoutputlabel">Retirement Pot at End of Retirement: £{{ deathpot }}</label>
-        <output name="x" class="dataoutput"></output>
+        <label class="dataoutputlabel">Retirement Pot at End of Retirement: £{{ deathpot }}</label>
         <br />
-        <label for="x" class="dataoutputlabel">First Year Drawdown: £{{ initdraw }}</label>
-        <output name="x" class="dataoutput"></output>
+        <label class="dataoutputlabel">First Year Drawdown: £{{ initdraw }}</label>
         <br />
-        <label for="x" class="dataoutputlabel">Last Year Drawdown: £{{ finaldraw }}</label>
-        <output name="x" class="dataoutput"></output>
+        <label class="dataoutputlabel">Last Year Drawdown: £{{ finaldraw }}</label>
         <hr />
-        <div id="square"></div>
-      </div>
     </div>
   </div>
 {% endblock %}

@@ -94,22 +94,10 @@ body {
   margin: 0.3em;
 }
 
-#output {
-  width: 60%;
-  margin: 1em auto 0 auto;
-  background-image: linear-gradient(to bottom, rgba(255, 164, 111, 0.6), rgba(255, 121, 111, 0.6));
-  padding: 1em 1em;
-  border-radius: 0.25em;
-}
-
 .dataoutputlabel {
   margin: 0 auto;
   padding: 10px;
   font-size: 1.5em;
-}
-
-.dataoutput {
-  
 }
 
 #square {
