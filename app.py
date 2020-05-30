@@ -21,14 +21,14 @@ class data():
         self.swr = swr # Safe withdrawal rate
         self.male = male # True = male False = female
     def getResults(self):
-        spy = self.savingsperyear
-        sl = self.retirementage - self.age
-        ig = self.investmentgrowth
-        cs = self.currentsavings
-        swr = self.swr
+        spy = int(self.savingsperyear)
+        sl = int(self.retirementage) - int(self.age)
+        ig = int(self.investmentgrowth)
+        cs = int(self.currentsavings)
+        swr = int(self.swr)
         
         #finalpot = money in pension bot at beginning of retirment
-        finalpot = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl))
+        final = ((spy)*(1-(((1+(ig/100))**sl)))/(1-(1+(ig/100)))) + (cs*((1+(ig/100))**sl))
         #deathpot = money in pension bot at end of retirment (death)
         deathpot = (final) * (((100-swr)/100)**sl) * (((100+ig)/100)**sl) 
         #initdraw = first year drawdown/ first year income from pulling money from pot
@@ -36,7 +36,7 @@ class data():
         #finaldraw = final year drawdown/ final year's income from pot
         finaldraw = ((final) * (((100-swr)/100)**(sl-1)) * (((100+ig)/100)**(sl-1))) * ((100-swr)/100)
         
-        return finalpot, deathpot, initdraw, finaldraw
+        return final, deathpot, initdraw, finaldraw
 
 @app.route('/datainput', methods=['POST', 'GET'])
 def datainput():
@@ -103,7 +103,7 @@ def results():
     finalpot, deathpot, initdraw, finaldraw = userinput.getResults()
 
 
-    return 'Success!'
+    return render_template('dataoutput.html', retirementage = retirementage, finalpot = round(finalpot,2), initdraw = round(initdraw, 2), finaldraw = round(finaldraw, 2), deathpot = round(deathpot,2))
 
 if __name__ == '__main__':
     app.run(debug=True)
